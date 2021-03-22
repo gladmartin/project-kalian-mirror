@@ -8,11 +8,18 @@ $dotenv->load();
 
 $token = $_ENV['GITHUB_ACCESS_TOKEN'];
 $client = new Github\Client();
-$client->authenticate($token, null, Github\Client::AUTH_ACCESS_TOKEN);
 
 $userRepoName = 'sandhikagalih';
 $repoName = 'project-kalian';
-$readme = $client->api('repo')->contents()->readme($userRepoName, $repoName);
+try {
+    $readme = $client->api('repo')->contents()->readme($userRepoName, $repoName);
+} catch (\Throwable $th) {
+    echo json_encode([
+        'success' => false,
+        'message' => $th->getMessage(),
+    ]);
+    die;
+}
 $readmeMd = base64_decode($readme['content']);
 
 if (!isset($readme['content'])) {
@@ -23,7 +30,7 @@ if (!isset($readme['content'])) {
     die;
 }
 
-// $readmeMd = file_get_contents('readme.md');
+// $readmeMd = file_get_contents('readme.md'); => for debug only
 $projects = [];
 $readmeMd = str_replace(['# project-kalian', '## Menyimpan daftar Project Kalian yang sudah disubmit di Discord'], '', $readmeMd);
 $periodes = explode('### ', $readmeMd);
