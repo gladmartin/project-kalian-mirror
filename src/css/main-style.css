@@ -1,0 +1,154 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.project {
+    height: 434px !important;
+}
+
+.project .card-header {
+    position: relative;
+    width: 100%;
+    min-height: 80px;
+
+}
+
+.project .logo {
+    height: 100px;
+    width: 100px;
+    color: white;
+    border-radius: 100%;
+    position: absolute;
+    top: 30px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    font-weight: 600;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+}
+
+.project .view-demo {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.project .view-demo .text {
+    color: gray !important;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.project .view-demo .text:hover {
+    color: rgb(190, 190, 190) !important;
+}
+
+.project .card-body .description {
+    text-align: justify;
+    color: rgb(109, 108, 108);
+}
+
+.project .card-body .description.limit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.no-github {
+    pointer-events: none;
+    cursor: no-drop;
+    opacity: .2;
+}
+
+.no-github:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* shimmer effect =>  (https://codepen.io/kianlavi/pen/BzbRZw) */
+
+.shine {
+    background: #e9e7e7;
+    background-image: linear-gradient(to right, #e9e7e7 0%, #edeef1 20%, #e9e7e7 40%, #e9e7e7 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 204px;
+    display: inline-block;
+    position: relative;
+    border-radius: 4px;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: placeholderShimmer;
+    -webkit-animation-timing-function: linear;
+}
+
+box {
+    height: 104px;
+    width: 100%;
+}
+
+lines {
+    height: 15px;
+    width: 100%;
+    display: block !important;
+    margin-top: 7px;
+}
+
+@-webkit-keyframes placeholderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.view-demo.shine {
+    height: 25px;
+    width: 100px;
+}
+
+.periode.shine {
+    height: 20px;
+    width: 160px;
+}
+
+.card-body h3.shine {
+    width: 70%;
+    height: 20px;
+}
+
+.card-body .btn.shine {
+    width: 100px;
+    height: 30px;
+    cursor: default;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
