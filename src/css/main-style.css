@@ -60,6 +60,12 @@ a {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    height: 100px;
+}
+
+.project .card-body .description.limit * {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .no-github {
